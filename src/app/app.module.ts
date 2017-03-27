@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
+import { Routes, RouterModule } from '@angular/router';
 
 import { MaterialModule } from '@angular/material';
 
@@ -15,6 +16,12 @@ import { Hl7SegmentComponent } from './play/hl7-segment/hl7-segment.component';
 import { Hl7FieldComponent } from './play/hl7-field/hl7-field.component';
 import { Hl7ComponentComponent } from './play/hl7-component/hl7-component.component';
 import { Hl7SubcomponentComponent } from './play/hl7-subcomponent/hl7-subcomponent.component';
+
+const routes: Routes = [
+  { path: '', component: LearnComponent },
+  { path: 'learn', component: LearnComponent },
+  { path: 'play', component: PlayComponent }
+];
 
 @NgModule({
   declarations: [
@@ -30,6 +37,7 @@ import { Hl7SubcomponentComponent } from './play/hl7-subcomponent/hl7-subcompone
     Hl7SubcomponentComponent
   ],
   imports: [
+    RouterModule.forRoot(routes),
     BrowserModule,
     FormsModule,
     HttpModule,
