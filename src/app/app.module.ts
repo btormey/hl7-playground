@@ -17,6 +17,8 @@ import { Hl7FieldComponent } from './play/hl7-field/hl7-field.component';
 import { Hl7ComponentComponent } from './play/hl7-component/hl7-component.component';
 import { Hl7SubcomponentComponent } from './play/hl7-subcomponent/hl7-subcomponent.component';
 
+import { Hl7Service } from './services/hl7.service';
+
 const routes: Routes = [
   { path: '', component: LearnComponent },
   { path: 'learn', component: LearnComponent },

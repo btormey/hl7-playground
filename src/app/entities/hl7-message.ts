@@ -2,7 +2,7 @@ import { Hl7MessageHeader } from './hl7-message-header';
 import { Delimeters } from './hl7-delimeters';
 import { Hl7Segment } from './hl7-segment';
 
-export class Message {
+export class Hl7Message {
     value: string;
     header: Hl7MessageHeader;
     delimeters: Delimeters;
@@ -12,7 +12,7 @@ export class Message {
         this.value = value;
     }
 
-    parse(): Message {
+    parse(): Hl7Message {
         if (this.value.indexOf('MSH') !== 0) {
             return;
         }

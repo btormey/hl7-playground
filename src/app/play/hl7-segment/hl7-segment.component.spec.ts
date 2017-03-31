@@ -1,5 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
+import { MaterialModule } from '@angular/material';
+
 import { Hl7SegmentComponent } from './hl7-segment.component';
 
 describe('Hl7SegmentComponent', () => {
@@ -8,7 +10,8 @@ describe('Hl7SegmentComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ Hl7SegmentComponent ]
+      declarations: [ Hl7SegmentComponent ],
+      imports: [ MaterialModule.forRoot() ]
     })
     .compileComponents();
   }));

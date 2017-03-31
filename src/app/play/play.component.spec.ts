@@ -1,6 +1,12 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
+import { FormsModule } from '@angular/forms';
+import { MaterialModule } from '@angular/material';
+
 import { PlayComponent } from './play.component';
+import { SidebarComponent } from './sidebar/sidebar.component';
+import { ParserComponent } from './parser/parser.component';
+import { Hl7SegmentComponent } from './hl7-segment/hl7-segment.component';
 
 describe('PlayComponent', () => {
   let component: PlayComponent;
@@ -8,7 +14,16 @@ describe('PlayComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ PlayComponent ]
+      declarations: [
+        PlayComponent,
+        SidebarComponent,
+        ParserComponent,
+        Hl7SegmentComponent
+      ],
+      imports: [
+        FormsModule,
+        MaterialModule.forRoot()
+      ]
     })
     .compileComponents();
   }));
