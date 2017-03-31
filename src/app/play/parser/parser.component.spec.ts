@@ -58,4 +58,11 @@ describe('ParserComponent', () => {
     component.clear();
     expect(component.input).toBe('');
   });
+
+  it('should clear the HL7 message when the input is cleared', () => {
+    component.input = simpleMessage.value;
+    component.parseMessage();
+    component.clear();
+    expect(component.message.value).toBe('');
+  });
 });

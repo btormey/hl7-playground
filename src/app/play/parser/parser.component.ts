@@ -18,6 +18,7 @@ export class ParserComponent implements OnInit {
 
   clear() {
     this.input = '';
+    this.message = new Hl7Message();
   }
 
   ngOnInit() {
