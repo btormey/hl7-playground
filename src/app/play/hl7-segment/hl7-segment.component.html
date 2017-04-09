@@ -6,9 +6,9 @@
   <md-card-content>
     <ul *ngIf="segment.fields && segment.fields.length > 0" class="field-list">
       <li *ngFor="let field of segment.fields">
-        <span *ngFor="let repetition of field.repetitions">
+        <div *ngFor="let repetition of field.repetitions" class="inline-block repetition">
           <app-hl7-field [field]="repetition" [repeating]="true"></app-hl7-field>
-        </span>
+        </div>
         <app-hl7-field *ngIf="!field.repeating" [field]="field" [repeating]="false"></app-hl7-field>
       </li>
     </ul>
