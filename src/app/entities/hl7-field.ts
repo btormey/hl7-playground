@@ -11,11 +11,17 @@ export class Hl7Field {
 
     constructor(value: string, address: string, private delimeters: Delimeters) {
         this.value = value;
-        this.repeating = this.value.indexOf(this.delimeters.repetitionSeperator) !== -1;
         this.address = address;
+        this.repeating = this.value.indexOf(this.delimeters.repetitionSeperator) !== -1 && 
+            this.address !== this.delimeters.delimeterFieldAddress;
+        
     }
 
     parse(): Hl7Field {
+        if(this.address === this.delimeters.delimeterFieldAddress) {
+            return this;
+        }
+
         if (this.repeating) {
             const split = this.value
                 .split(this.delimeters.repetitionSeperator);

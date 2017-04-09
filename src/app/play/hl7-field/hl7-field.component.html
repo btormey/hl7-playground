@@ -1,6 +1,7 @@
 <span>
-  <md-chip-list style="display: inline-block;">
+  <md-chip-list class="inline-block">
     <md-chip color="accent" selected="true">Field</md-chip>
+    <md-chip *ngIf="repeating" color="warn" selected="true">Repeating</md-chip>
   </md-chip-list>
   <strong>
     {{ field.address }}

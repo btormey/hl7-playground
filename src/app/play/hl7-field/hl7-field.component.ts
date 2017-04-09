@@ -7,6 +7,7 @@ import { Hl7Field } from '../../entities/hl7-field';
   styleUrls: ['./hl7-field.component.scss']
 })
 export class Hl7FieldComponent {
+  @Input() repeating: boolean;
   @Input() field: Hl7Field;
   constructor() { }
 }

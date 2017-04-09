@@ -1,4 +1,5 @@
 export class Delimeters {
+    delimeterFieldAddress = 'MSH.2';
     segmentSeperator = '\n';
     fieldSeperator: string;
     componentSeperator: string;

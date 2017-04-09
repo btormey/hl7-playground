@@ -16,6 +16,10 @@ export class Hl7Segment {
 
         this.name = split[0];
 
+        if(this.name == 'MSH') {
+            split.splice(1, 0, '|');
+        }
+
         for (let i = 1; i < split.length; i++) {
             this.fields
                 .push(new Hl7Field(split[i], `${this.name}.${i}`, this.delimeters)
