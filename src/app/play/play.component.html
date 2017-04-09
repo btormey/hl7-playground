@@ -1,8 +1,8 @@
 <md-sidenav-container class="full-width">
   <md-sidenav #sidenav mode="side" opened="true">
-    <app-sidebar></app-sidebar>
+    <app-sidebar [segments]="parsed.segments"></app-sidebar>
   </md-sidenav>
   <section>
-    <app-parser></app-parser>
+    <app-parser (parsedMessage)="onMessageParsed($event)"></app-parser>
   </section>
 </md-sidenav-container>

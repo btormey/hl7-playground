@@ -1,3 +1,16 @@
-<p>
-  hl7-field works!
-</p>
+<span>
+  <md-chip-list style="display: inline-block;">
+    <md-chip color="accent" selected="true">Field</md-chip>
+  </md-chip-list>
+  <strong>
+    {{ field.address }}
+  </strong>
+  {{ field.value }}
+</span>
+<div>
+  <ul *ngIf="field.components && field.components.length > 0" class="component-list">
+    <li *ngFor="let component of field.components">
+        <app-hl7-component [component]="component"></app-hl7-component>
+    </li>
+  </ul>
+</div>

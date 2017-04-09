@@ -4,5 +4,10 @@
     <md-card-subtitle>{{ segment.value }}</md-card-subtitle>
   </md-card-header>
   <md-card-content>
+    <ul *ngIf="segment.fields && segment.fields.length > 0" class="field-list">
+      <li *ngFor="let field of segment.fields">
+        <app-hl7-field [field]="field"></app-hl7-field>
+      </li>
+    </ul>
   </md-card-content>
 </md-card>

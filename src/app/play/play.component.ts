@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { Hl7Service } from '../services/hl7.service';
+import { Hl7Message } from '../entities/hl7-message';
 
 @Component({
   selector: 'app-play',
@@ -7,11 +8,11 @@ import { Hl7Service } from '../services/hl7.service';
   styleUrls: ['./play.component.scss'],
   providers: [ Hl7Service ]
 })
-export class PlayComponent implements OnInit {
-
+export class PlayComponent {
+  parsed: Hl7Message = new Hl7Message('');
   constructor() { }
 
-  ngOnInit() {
+  onMessageParsed(parsed: Hl7Message) {
+    this.parsed = parsed;
   }
-
 }
